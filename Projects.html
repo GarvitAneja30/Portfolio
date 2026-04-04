@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projects - Garvit</title>
+  <link rel="stylesheet" href="projects.css">
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (
+      savedTheme === "dark" ||
+      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="Contact.html">CONTACT</a>
+            <button id="themeToggle">🌙</button>
+        </nav>
+
+<section class="projects-wrapper">
+
+  <h1>My Work</h1>
+  <p class="subtitle">A collection of things I’ve built and experimented with.</p>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h2>WhatsApp Web Clone</h2>
+      <p>Real-time chat app with authentication and live messaging.</p>
+      <span>Node.js • Express • Socket.io</span>
+
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Live</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h2>Portfolio Website</h2>
+      <p>Minimal personal portfolio with dark mode and smooth UI.</p>
+      <span>HTML • CSS • JavaScript</span>
+
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Live</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="internships-wrapper">
+
+  <h1>Internship</h1>
+  <p class="subtitle">Hands-on industry experience.</p>
+
+  <div class="internship-card">
+
+    <div class="internship-header">
+      <h2>Frontend Developer Intern</h2>
+      <span>May 2025 – Jul 2025 • Remote</span>
+    </div>
+
+    <a href="https://progmattic.com/" target="_blank" style="text-decoration: none;">
+        <h3>Programmatic AI</h3>
+    </a>
+
+    <ul>
+      <li>Built and deployed a full e-commerce website using WooCommerce</li>
+      <li>Configured hosting, DNS, and domain setup via Hostinger</li>
+      <li>Customized themes and optimized performance, security, and SEO</li>
+      <li>Integrated payment gateway and shopping cart functionality</li>
+    </ul>
+
+    <div class="internship-tags">
+      <span>WordPress</span>
+      <span>WooCommerce</span>
+      <span>SEO</span>
+    </div>
+
+    <a href="GarvitAneja_Trainee.pdf" class="cert-btn" target="_blank">View Certificate</a>
+
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/garvit-aneja-bbbbaa332/" target="_blank">
+      <img src="Linkedin.jpg">
+    </a>
+    <a href="https://github.com/GarvitAneja30" target="_blank">
+      <img src="Github.png">
+    </a>
+    <a href="https://www.instagram.com/garvit.aneja/" target="_blank">
+      <img src="instagram.jpeg">
+    </a>
+  </div>
+
+  <div>
+    <button id="backToTop">↑</button>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("themeToggle");
+
+  const isDark = document.documentElement.classList.contains("dark");
+  toggle.textContent = isDark ? "☀️" : "🌙";
+
+  toggle.onclick = () => {
+    document.documentElement.classList.toggle("dark");
+
+    if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggle.textContent = "🌙";
+    }
+  };
+
+  document.getElementById("backToTop").onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+});
+</script>
+
+</body>
+</html>

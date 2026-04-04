@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script>
+            const savedTheme = localStorage.getItem("theme");
+
+            if (
+            savedTheme === "dark" ||
+            (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+            document.documentElement.classList.add("dark");
+            }
+        </script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        <title>About Me</title>
+        <link rel="stylesheet" href="about.css">
+    </head>
+    <body>
+        <section class="hero">
+            <div class="left">
+                <img src="day.png" class="illustration light-img">
+                <img src="night.png" class="illustration dark-img">
+            </div>
+            <div class="right">
+                <nav>
+                    <a href="index.html">HOME</a>
+                    <a href="Projects.html">PROJECTS</a>
+                    <a href="about.html">ABOUT ME</a>
+                    <a href="Contact.html">CONTACT</a>
+                    <button id="themeToggle">🌙</button>
+                </nav>
+                <div class="content">
+                    <p class="intro">👋 Hi, I’m Garvit</p>
+                    <h2>
+                        I like making <span class="outline">fun</span>, <br>
+                        interactive things <br>
+                        with code—and <span class="outline">building</span> new ideas.
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <section class="hobbies">
+        <h3>Things I enjoy</h3>
+            <div class="hobby-list">
+                <div class="hobby">
+                <h4>🎮 Gaming</h4>
+                <p>I enjoy exploring game mechanics and interactive design.</p>
+                </div>
+                <div class="hobby">
+                <h4>🧠 Problem Solving</h4>
+                <p>I like tackling logical challenges and building solutions.</p>
+                </div>
+                <div class="hobby">
+                <h4>🏆 Competitive Programming</h4>
+                <p>I like solving tough problems, optimizing solutions, and pushing my limits under time pressure.</p>
+                </div>
+            </div>
+        </section>
+        <section class="projects">
+            <h3>Projects</h3>
+            <div class="project">
+                <h4>🌐 Personal Portfolio</h4>
+                <p>Designed and built a responsive portfolio using HTML, CSS, and JS.</p>
+            </div>
+            <div class="project">
+                <h4>🧠 Problem Solver</h4>
+                <p>Solved 150+ problems across platforms like Codeforces and LeetCode.</p>
+            </div>
+        </section>
+        <section class="skills">
+            <h3>Skills</h3>
+            <p>
+                <span>C++</span>
+                <span>Data Structures</span>
+                <span>Algorithms</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </p>
+        </section>
+        <script src="aboutme.js"></script>
+    </body>
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/garvit-aneja-bbbbaa332/" target="_blank" rel="noopener noreferrer">
+                <img src="Linkedin.jpg">
+            </a>
+            <a href="https://github.com/GarvitAneja30" target="_blank" rel="noopener noreferrer">
+                <img src="Github.png">
+            </a>
+            <a href="https://www.instagram.com/garvit.aneja/" target="_blank" rel="noopener noreferrer">
+                <img src="instagram.jpeg">
+            </a>
+        </div>
+        <div class="footerbuttons">
+            <button id="backToTop">↑</button>
+        </div>
+    </footer>
+</html>

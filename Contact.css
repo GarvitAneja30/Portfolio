@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.dark body {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+nav {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  position: relative;
+  transition: 0.3s;
+}
+
+.dark nav a {
+  color: #f5f5f5;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+#themeToggle {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 60px;
+  border-radius: 24px;
+
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.dark .contact-card {
+  background: #1e1e1e;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.contact-card h1 {
+  font-size: 55px;
+  font-weight: 900;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #6FDCBF, #90E0EF);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 50px;
+}
+
+.contact-box {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  flex: 1;
+  min-width: 220px;
+  padding: 25px;
+  border-radius: 16px;
+
+  background: #f5f5f5;
+  transition: 0.3s ease;
+}
+
+.dark .contact-item {
+  background: #2a2a2a;
+}
+
+.contact-item:hover {
+  transform: translateY(-6px);
+  background: #6FDCBF;
+  color: #121212;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid #6FDCBF;
+  color: #6FDCBF;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: #6FDCBF;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+.dark .contact-links a:hover {
+  background: #6FDCBF;
+  color: #121212;
+}
+
+footer {
+  background: #333;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dark footer {
+  background: #000;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.footer-links img:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+#backToTop {
+  padding: 10px 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #6FDCBF;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#backToTop:hover {
+  background: #fff;
+}
+
+.dark img[src*="Github"] {
+  filter: invert(1);
+}
+
+.light-img {
+  display: block;
+}
+
+.dark-img {
+  display: none;
+}
+
+.dark .light-img {
+  display: none;
+}
+
+.dark .dark-img {
+  display: block;
+}

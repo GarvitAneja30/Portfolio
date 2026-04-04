@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <script>
+            const savedTheme = localStorage.getItem("theme");
+
+            if (
+            savedTheme === "dark" ||
+            (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+            document.documentElement.classList.add("dark");
+            }
+        </script>
+        <title>Garvit</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="Contact.html">CONTACT</a>
+            <button id="themeToggle">🌙</button>
+        </nav>
+        <div id="home" class="maincontainer">
+            <div class="Info">
+                <div class="text-block">
+                    <p class="intro">Hi, my name is</p>
+                    <h1 class="name typewriter">Garvit Aneja.</h1>
+                    <p class="desc">I am currently studying Computer Science at VIT Vellore.</p>
+                    <div style="width: fit-content;">
+                        <span class="technologies typewriter2" id="typewriter2"></span>
+                    </div>
+                    <div class="button_container">
+                        <a href="resume.pdf" download class="btn" target="_blank">⬇ Resume</a>
+                        <a href="Projects.html" download class="btn" target="_blank">  Projects  </a>
+                    </div>
+                    <div class="links">
+                        <a href="https://leetcode.com/u/58a3JQ4qUJ/" class="mini-btn" target="_blank" rel="noopener noreferrer">LeetCode</a>
+                        <a href="https://codeforces.com/profile/garvitaneja" class="mini-btn" target="_blank" rel="noopener noreferrer">Codeforces</a>
+                        <a href="https://github.com/GarvitAneja30" class="mini-btn" target="_blank" rel="noopener noreferrer">Github</a>
+                        <a href="https://www.linkedin.com/in/garvit-aneja-bbbbaa332/" class="mini-btn" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                    </div>
+                </div>
+            </div>
+            <div class="Photo">
+                <img src="Myself.jpeg" alt="profile">
+            </div>
+        </div>
+        <script src="aboutme.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+
+            const texts = [
+                "HTML • CSS • JAVASCRIPT • REACT • Node JS",
+                "C/C++ • Python • Java"
+            ];
+
+            let index = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            const typeSpeed = 80;
+            const deleteSpeed = 40;
+            const delay = 2000;
+
+            const element = document.getElementById("typewriter2");
+
+            function typeEffect() {
+                const currentText = texts[index];
+
+                if (!isDeleting) {
+                element.textContent = currentText.substring(0, charIndex);
+                charIndex++;
+                } else {
+                element.textContent = currentText.substring(0, charIndex);
+                charIndex--;
+                }
+
+                if (!isDeleting && charIndex > currentText.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, index === 0 ? 2500 : delay);
+                return;
+                }
+
+                if (isDeleting && charIndex < 0) {
+                isDeleting = false;
+                index = (index + 1) % texts.length;
+                charIndex = 0;
+                element.classList.add("typewriter2-hidden");
+                setTimeout(() => {
+                    element.classList.remove("typewriter2-hidden");
+                    typeEffect();
+                }, 500);
+                return;
+                }
+
+                setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
+            }
+
+            typeEffect();
+            });
+    </script>
+    </body>
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/garvit-aneja-bbbbaa332/" target="_blank" rel="noopener noreferrer">
+                <img src="Linkedin.jpg">
+            </a>
+            <a href="https://github.com/GarvitAneja30" target="_blank" rel="noopener noreferrer">
+                <img src="Github.png">
+            </a>
+            <a href="https://www.instagram.com/garvit.aneja/" target="_blank" rel="noopener noreferrer">
+                <img src="instagram.jpeg">
+            </a>
+        </div>
+        <div class="footerbuttons">
+            <button id="backToTop">↑</button>
+        </div>
+    </footer>
+</html>

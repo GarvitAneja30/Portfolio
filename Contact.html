@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact - Garvit</title>
+  <link rel="stylesheet" href="contact.css">
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (
+      savedTheme === "dark" ||
+      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="Projects.html">PROJECTS</a>
+    <a href="about.html">ABOUT ME</a>
+    <a href="Contact.html">CONTACT</a>
+    <button id="themeToggle">🌙</button>
+  </nav>
+    <section class="contact-wrapper">
+
+    <div class="contact-card">
+        <h1>I’m always up for a chat.</h1>
+        <p class="subtitle">
+        Whether it's collaboration, opportunities, or just a quick hello — feel free to reach out.
+        </p>
+        <div class="contact-box">
+        <div class="contact-item">
+            <h3>Email</h3>
+            <p>garvitaneja30@gmail.com</p>
+        </div>
+        <div class="contact-item">
+            <h3>Location</h3>
+            <p>VIT Vellore, India</p>
+        </div>
+        </div>
+        <div class="contact-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+        </div>
+
+    </div>
+
+    </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("themeToggle");
+
+      const isDark = document.documentElement.classList.contains("dark");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+
+      toggle.onclick = () => {
+        document.documentElement.classList.toggle("dark");
+
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+          toggle.textContent = "☀️";
+        } else {
+          localStorage.setItem("theme", "light");
+          toggle.textContent = "🌙";
+        }
+      };
+    });
+  </script>
+
+</body>
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/garvit-aneja-bbbbaa332/" target="_blank" rel="noopener noreferrer">
+                <img src="Linkedin.jpg">
+            </a>
+            <a href="https://github.com/GarvitAneja30" target="_blank" rel="noopener noreferrer">
+                <img src="Github.png">
+            </a>
+            <a href="https://www.instagram.com/garvit.aneja/" target="_blank" rel="noopener noreferrer">
+                <img src="instagram.jpeg">
+            </a>
+        </div>
+        <div class="footerbuttons">
+            <button id="backToTop">↑</button>
+        </div>
+    </footer>
+</html>
