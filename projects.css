@@ -217,6 +217,7 @@ footer {
   border-radius: 6px;
   transition: 0.3s;
 }
+
 .footer-links img:hover {
   transform: translateY(-5px) scale(1.1);
 }
